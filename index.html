@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КГУ «Молодёжный ресурсный центр» Тайыншинского района</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#0058A9',       /* Яркий синий с логотипа */
+                            bluedark: '#003E7A',   /* Глубокий синий */
+                            bluelight: '#EBF4FF',  /* Светло-синий фон */
+                            orange: '#F36F21',     /* Насыщенный оранжевый */
+                            orangedark: '#D9580C', /* Тёмно-оранжевый */
+                            orangelight: '#FFF3EB' /* Светло-оранжевый фон */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-50-50 {
+            background: linear-gradient(135deg, #0058A9 0%, #0058A9 50%, #F36F21 50%, #F36F21 100%);
+        }
+        .gradient-50-50-soft {
+            background: linear-gradient(135deg, rgba(0, 88, 169, 0.05) 0%, rgba(0, 88, 169, 0.05) 50%, rgba(243, 111, 33, 0.05) 50%, rgba(243, 111, 33, 0.05) 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b-2 border-brand-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="WhatsApp Image 2026-09-25 at 10.19.49.jpeg" 
+                     alt="Логотип МРЦ Тайыншинского района" 
+                     class="w-14 h-14 object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow">
+                <div>
+                    <span class="block text-lg font-black text-brand-blue leading-tight group-hover:text-brand-orange transition-colors">
+                        МРЦ <span class="text-brand-orange">Тайынша</span>
+                    </span>
+                    <span class="block text-xs font-semibold text-slate-500">КГУ «МРЦ Тайыншинского района»</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-bold text-slate-700">
+                <a href="#about" class="hover:text-brand-blue transition-colors py-1 border-b-2 border-transparent hover:border-brand-blue">О нас</a>
+                <a href="#directions" class="hover:text-brand-orange transition-colors py-1 border-b-2 border-transparent hover:border-brand-orange">Направления</a>
+                <a href="#events" class="hover:text-brand-blue transition-colors py-1 border-b-2 border-transparent hover:border-brand-blue">События</a>
+                <a href="#contacts" class="hover:text-brand-orange transition-colors py-1 border-b-2 border-transparent hover:border-brand-orange">Контакты</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-3">
+                <a href="https://wa.me/77086993719" target="_blank" class="px-5 py-2.5 rounded-xl bg-brand-orange hover:bg-brand-orangedark text-white font-bold text-sm transition-all shadow-md hover:shadow-lg flex items-center gap-2 transform hover:-translate-y-0.5">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> Написать в WhatsApp
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" aria-label="Открыть меню" class="md:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none">
+                <i data-lucide="menu" class="w-7 h-7 text-brand-blue"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b-2 border-brand-orange px-4 pt-3 pb-6 space-y-3 shadow-xl">
+            <a href="#about" class="block px-4 py-2.5 rounded-xl font-bold text-slate-700 hover:bg-brand-bluelight hover:text-brand-blue transition-colors">О нас</a>
+            <a href="#directions" class="block px-4 py-2.5 rounded-xl font-bold text-slate-700 hover:bg-brand-orangelight hover:text-brand-orange transition-colors">Направления</a>
+            <a href="#events" class="block px-4 py-2.5 rounded-xl font-bold text-slate-700 hover:bg-brand-bluelight hover:text-brand-blue transition-colors">События</a>
+            <a href="#contacts" class="block px-4 py-2.5 rounded-xl font-bold text-slate-700 hover:bg-brand-orangelight hover:text-brand-orange transition-colors">Контакты</a>
+            <a href="https://wa.me/77000000000" target="_blank" class="block w-full text-center px-4 py-3 rounded-xl bg-brand-orange text-white font-bold text-sm shadow-md">
+                Связаться в WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-slate-900 text-white">
+        <!-- Background Split Columns (Hidden on small screens, 50/50 split desktop) -->
+        <div class="absolute inset-0 grid grid-cols-1 md:grid-cols-2 opacity-95">
+            <div class="bg-gradient-to-br from-brand-blue to-brand-bluedark"></div>
+            <div class="bg-gradient-to-br from-brand-orange to-brand-orangedark"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-28 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Side (Hero Text) -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-bold tracking-wide uppercase">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-yellow-300"></i> Молодёжный ресурсный центр
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight drop-shadow-md">
+                        Твоё время — <br class="hidden sm:inline">
+                        <span class="text-amber-300 underline decoration-white/30 decoration-wavy">твои возможности!</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-white/90 font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Официальная платформа для поддержки социальных инициатив, трудоустройства, грантов и волонтёрства молодёжи Тайыншинского района (от 14 до 35 лет).
+                    </p>
+                    
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#apply" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-brand-orange hover:bg-slate-100 font-extrabold text-base transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                            <i data-lucide="heart-handshake" class="w-5 h-5 text-brand-orange"></i> Вступить в волонтёры
+                        </a>
+                        <a href="#directions" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-black/30 hover:bg-black/40 border-2 border-white/40 text-white font-extrabold text-base transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
+                            <i data-lucide="compass" class="w-5 h-5"></i> Наши проекты
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side (Visual Card with Emblem) -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative bg-white/10 backdrop-blur-md border-2 border-white/20 p-8 rounded-3xl shadow-2xl text-center max-w-md w-full">
+                        <div class="w-32 h-32 mx-auto mb-6 bg-white rounded-full p-2 shadow-inner flex items-center justify-center">
+                            <img src="WhatsApp Image 2026-09-25 at 10.19.49.jpeg" alt="Логотип МРЦ" class="w-full h-full object-contain">
+                        </div>
+                        <h2 class="text-2xl font-black mb-2 text-white">Тайынша Жастары</h2>
+                        <p class="text-xs text-white/80 mb-6 uppercase tracking-wider font-semibold">Северо-Казахстанская область</p>
+                        
+                        <div class="grid grid-cols-2 gap-3 text-left">
+                            <div class="p-3 rounded-xl bg-white/10 border border-white/10">
+                                <div class="text-xs text-white/70">Волонтёров</div>
+                                <div class="text-xl font-bold text-amber-300">300+ чел</div>
+                            </div>
+                            <div class="p-3 rounded-xl bg-white/10 border border-white/10">
+                                <div class="text-xs text-white/70">Сел и округов</div>
+                                <div class="text-xl font-bold text-cyan-300">18 округов</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-blue font-extrabold uppercase tracking-widest text-xs">О нашей организации</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900">Молодёжный ресурсный центр сегодня</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-brand-blue to-brand-orange mx-auto rounded-full"></div>
+            </div>
+
+            <!-- 50/50 Split Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <!-- Blue Box: Mission -->
+                <div class="bg-gradient-to-br from-brand-blue to-brand-bluedark text-white p-8 sm:p-10 rounded-3xl shadow-lg flex flex-col justify-between relative overflow-hidden">
+                    <div class="space-y-6 relative z-10">
+                        <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+                            <i data-lucide="target" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-black">Наша ключевая миссия</h3>
+                        <p class="text-white/90 text-base leading-relaxed">
+                            КГУ «Молодёжный ресурсный центр Тайыншинского района» создано государством для решения актуальных вопросов подрастающего поколения. Мы работаем для того, чтобы каждый молодой человек в городе Тайынша и всех сельских округах имел условия для самореализации, работы и творческого роста.
+                        </p>
+                    </div>
+                    <div class="pt-8 border-t border-white/20 flex items-center justify-between text-sm font-bold relative z-10">
+                        <span>СКО, Тайыншинский район</span>
+                        <span class="px-3 py-1 bg-white/20 rounded-full text-xs">Государственный центр</span>
+                    </div>
+                </div>
+
+                <!-- Orange Box: Stats Grid -->
+                <div class="bg-gradient-to-br from-brand-orange to-brand-orangedark text-white p-8 sm:p-10 rounded-3xl shadow-lg flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-white">
+                            <i data-lucide="trending-up" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-black">Результаты в цифрах</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/10 border border-white/20 p-4 rounded-2xl backdrop-blur-sm">
+                                <div class="text-3xl sm:text-4xl font-black text-white">50+</div>
+                                <div class="text-xs sm:text-sm font-medium text-white/80 mt-1">Мероприятий ежегодно</div>
+                            </div>
+                            <div class="bg-white/10 border border-white/20 p-4 rounded-2xl backdrop-blur-sm">
+                                <div class="text-3xl sm:text-4xl font-black text-white">300+</div>
+                                <div class="text-xs sm:text-sm font-medium text-white/80 mt-1">Активных волонтёров</div>
+                            </div>
+                            <div class="bg-white/10 border border-white/20 p-4 rounded-2xl backdrop-blur-sm">
+                                <div class="text-3xl sm:text-4xl font-black text-white">1000+</div>
+                                <div class="text-xs sm:text-sm font-medium text-white/80 mt-1">Консультаций молодёжи</div>
+                            </div>
+                            <div class="bg-white/10 border border-white/20 p-4 rounded-2xl backdrop-blur-sm">
+                                <div class="text-3xl sm:text-4xl font-black text-white">100%</div>
+                                <div class="text-xs sm:text-sm font-medium text-white/80 mt-1">Поддержка инициатив</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directions Section -->
+    <section id="directions" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-brand-orange font-extrabold uppercase tracking-widest text-xs">Чем мы занимаемся</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900">Направления работы МРЦ</h2>
+                <p class="text-slate-600">Основные векторы поддержки молодых жителей Тайыншинского района</p>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-brand-orange to-brand-blue mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 (Blue Accent) -->
+                <div class="group bg-slate-50 border-2 border-slate-200 hover:border-brand-blue p-8 rounded-3xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-bluelight text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors flex items-center justify-center">
+                            <i data-lucide="heart" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-brand-blue transition-colors">Волонтёрский корпус</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Организация помощи ветеранам, участие в республиканских и районных социальных проектах, выездные добровольческие акции.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-200">
+                        <span class="inline-flex items-center text-xs font-bold text-brand-blue group-hover:underline">
+                            Выдача волонтёрских книжек <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 2 (Orange Accent) -->
+                <div class="group bg-slate-50 border-2 border-slate-200 hover:border-brand-orange p-8 rounded-3xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-orangelight text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors flex items-center justify-center">
+                            <i data-lucide="sprout" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-brand-orange transition-colors">Трудоустройство & «Жасыл ел»</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Сезонные отряды озеленения «Жасыл ел», молодежная практика, подбор первого места работы и помощь с резюме.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-200">
+                        <span class="inline-flex items-center text-xs font-bold text-brand-orange group-hover:underline">
+                            Сезонная работа для молодежи <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 3 (Blue Accent) -->
+                <div class="group bg-slate-50 border-2 border-slate-200 hover:border-brand-blue p-8 rounded-3xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-bluelight text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors flex items-center justify-center">
+                            <i data-lucide="award" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-brand-blue transition-colors">Гранты & Инициативы</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Сопровождение заявок на стартап-гранты (Zhas Project, «Тәуелсіздік ұрпақтары») и поддержка эко-проектов «Таза Қазақстан».
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-200">
+                        <span class="inline-flex items-center text-xs font-bold text-brand-blue group-hover:underline">
+                            Консультации по бизнес-идеям <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 4 (Orange Accent) -->
+                <div class="group bg-slate-50 border-2 border-slate-200 hover:border-brand-orange p-8 rounded-3xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-orangelight text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors flex items-center justify-center">
+                            <i data-lucide="shield-check" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-brand-orange transition-colors">Правовая & Псих. помощь</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Бесплатные конфиденциальные консультации юриста и психолога для молодых людей, оказавшихся в сложной жизненной ситуации.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-200">
+                        <span class="inline-flex items-center text-xs font-bold text-brand-orange group-hover:underline">
+                            Бесплатно и анонимно <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 5 (Blue Accent) -->
+                <div class="group bg-slate-50 border-2 border-slate-200 hover:border-brand-blue p-8 rounded-3xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-bluelight text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors flex items-center justify-center">
+                            <i data-lucide="messages-square" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-brand-blue transition-colors">Молодёжный досуг & Дебаты</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Развитие дебатного движения района, интеллектуальные викторины, спортивные спартакиады и киноклубы.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-200">
+                        <span class="inline-flex items-center text-xs font-bold text-brand-blue group-hover:underline">
+                            Развитие ораторского искусства <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 6 (Orange Accent) -->
+                <div class="group bg-slate-50 border-2 border-slate-200 hover:border-brand-orange p-8 rounded-3xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-orangelight text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors flex items-center justify-center">
+                            <i data-lucide="users" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 group-hover:text-brand-orange transition-colors">Работа с сельской молодёжью</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Выездные встречи специалистов МРЦ в села Ясная Поляна, Чкалово, Кировское и другие населенные пункты района.
+                        </p>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-200">
+                        <span class="inline-flex items-center text-xs font-bold text-brand-orange group-hover:underline">
+                            Охват 100% сел района <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <span class="text-brand-blue font-extrabold uppercase tracking-widest text-xs">Календарь событий</span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900">Ближайшие мероприятия</h2>
+                </div>
+                <a href="#apply" class="inline-flex items-center gap-2 font-bold text-brand-orange hover:text-brand-orangedark transition-colors">
+                    Предложить своё мероприятие <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Event 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="bg-brand-blue text-white px-6 py-3 font-bold text-xs uppercase tracking-wider flex justify-between items-center">
+                            <span>Экология</span>
+                            <span>Тайынша</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-brand-orange">15 Октября 2026</span>
+                            <h3 class="text-xl font-black text-slate-900">Субботник «Таза Қазақстан»</h3>
+                            <p class="text-slate-600 text-sm">Масштабная экологическая акция по высадке саженцев и уборке рекреационной зоны.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#apply" class="block w-full text-center py-3 rounded-xl bg-brand-blue hover:bg-brand-bluedark text-white font-bold text-sm transition-colors">
+                            Зарегистрироваться
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="bg-brand-orange text-white px-6 py-3 font-bold text-xs uppercase tracking-wider flex justify-between items-center">
+                            <span>Дебаты</span>
+                            <span>с. Чкалово</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-brand-blue">22 Октября 2026</span>
+                            <h3 class="text-xl font-black text-slate-900">Районный турнир дебатов</h3>
+                            <p class="text-slate-600 text-sm">Интеллектуальная кубковая игра среди школьных и молодежных команд района.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#apply" class="block w-full text-center py-3 rounded-xl bg-brand-orange hover:bg-brand-orangedark text-white font-bold text-sm transition-colors">
+                            Зарегистрироваться
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden border-2 border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="bg-brand-blue text-white px-6 py-3 font-bold text-xs uppercase tracking-wider flex justify-between items-center">
+                            <span>Бизнес</span>
+                            <span>МРЦ / Онлайн</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="text-xs font-bold text-brand-orange">05 Ноября 2026</span>
+                            <h3 class="text-xl font-black text-slate-900">Воркшоп «Грант на стартап»</h3>
+                            <p class="text-slate-600 text-sm">Обучение написанию бизнес-планов для участия в государственных конкурсах грантов.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#apply" class="block w-full text-center py-3 rounded-xl bg-brand-blue hover:bg-brand-bluedark text-white font-bold text-sm transition-colors">
+                            Зарегистрироваться
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section id="apply" class="py-20 bg-gradient-to-br from-brand-bluedark via-slate-900 to-brand-orangedark text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center space-y-3 mb-12">
+                <span class="px-4 py-1.5 rounded-full bg-white/10 text-amber-300 font-bold text-xs uppercase tracking-wider">Обратная связь</span>
+                <h2 class="text-3xl sm:text-4xl font-black">Подать заявку или задать вопрос</h2>
+                <p class="text-white/80">Оставьте свои данные, и сотрудники МРЦ свяжутся с вами в течение дня</p>
+            </div>
+
+            <!-- Form Container -->
+            <form id="contact-form" class="bg-white/10 backdrop-blur-md p-8 sm:p-10 rounded-3xl border-2 border-white/20 shadow-2xl space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-white/90 mb-2">Ваше ФИО *</label>
+                        <input type="text" placeholder="Алихан Нурланов" required class="w-full px-4 py-3.5 rounded-xl bg-slate-900/80 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-white/90 mb-2">Телефон / WhatsApp *</label>
+                        <input type="tel" placeholder="+7 (705) 000-00-00" required class="w-full px-4 py-3.5 rounded-xl bg-slate-900/80 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-white/90 mb-2">Населённый пункт</label>
+                        <input type="text" placeholder="г. Тайынша / с. Чкалово..." class="w-full px-4 py-3.5 rounded-xl bg-slate-900/80 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-white/90 mb-2">Интересующее направление</label>
+                        <select class="w-full px-4 py-3.5 rounded-xl bg-slate-900/80 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-brand-orange">
+                            <option value="volontuer">Вступить в волонтёры</option>
+                            <option value="jasyl-el">Программа «Жасыл ел»</option>
+                            <option value="granty">Получение гранта / бизнес</option>
+                            <option value="help">Юридическая / психологическая помощь</option>
+                            <option value="other">Другой вопрос</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-white/90 mb-2">Ваше сообщение</label>
+                    <textarea rows="4" placeholder="Напишите кратко ваш вопрос или предложение..." class="w-full px-4 py-3.5 rounded-xl bg-slate-900/80 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-orange"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-orange to-amber-500 hover:from-brand-orangedark hover:to-orange-600 font-extrabold text-white text-base transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5">
+                    Отправить обращения в МРЦ
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <footer id="contacts" class="bg-white border-t-4 border-brand-blue pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <img src="WhatsApp Image 2026-09-25 at 10.19.49.jpeg" alt="Логотип МРЦ" class="w-14 h-14 object-contain">
+                        <div>
+                            <span class="block text-xl font-black text-brand-blue">МРЦ Тайынша</span>
+                            <span class="block text-xs font-semibold text-slate-500">КГУ «МРЦ Тайыншинского района»</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Государственный ресурсный центр для комплексной поддержки молодёжи, развития добровольчества и социальных инициатив района.
+                    </p>
+                </div>
+
+                <!-- Col 2: Official Contacts -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider">Контакты и адрес</h3>
+                    <div class="space-y-3 text-sm text-slate-700 font-medium">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-orange shrink-0 mt-0.5"></i>
+                            <span>СКО, Тайыншинский район, г. Тайынша, ул. Астана, зд. 165</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-brand-blue shrink-0"></i>
+                            <a href="mailto:kgu.centr@mail.ru" class="hover:underline">kgu.centr@mail.ru</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-brand-orange shrink-0"></i>
+                            <span>Горячая линия МРЦ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 3: Social Media Links -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider">Мы в социальных сетях</h3>
+                    <p class="text-sm text-slate-600">Подписывайтесь, чтобы следить за анонсами грантов и мероприятий:</p>
+                    <div class="flex gap-3 pt-1">
+                        <a href="https://instagram.com" target="_blank" class="w-12 h-12 rounded-2xl bg-brand-bluelight text-brand-blue hover:bg-brand-blue hover:text-white flex items-center justify-center transition-all transform hover:scale-110 shadow-sm" title="Instagram">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="w-12 h-12 rounded-2xl bg-brand-orangelight text-brand-orange hover:bg-brand-orange hover:text-white flex items-center justify-center transition-all transform hover:scale-110 shadow-sm" title="TikTok">
+                            <i data-lucide="video" class="w-6 h-6"></i>
+                        </a>
+                        <a href="https://wa.me/77000000000" target="_blank" class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 hover:bg-emerald-500 hover:text-white flex items-center justify-center transition-all transform hover:scale-110 shadow-sm" title="WhatsApp">
+                            <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright Line -->
+            <div class="border-t border-slate-200 pt-8 text-center text-xs font-semibold text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <span>&copy; 2026 КГУ «Молодёжный ресурсный центр» Тайыншинского района</span>
+                <span class="text-slate-400">Северо-Казахстанская область</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/77000000000" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Написать в WhatsApp"
+       class="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-emerald-500 to-green-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 hover:shadow-emerald-500/50 group">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out font-bold text-sm pl-0 group-hover:pl-2">
+            Связаться в WhatsApp
+        </span>
+    </a>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Navigation Menu Handler
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form submission demo response
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Ваша заявка успешно отправлена! Специалист МРЦ свяжется с вами.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
